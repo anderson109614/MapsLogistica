@@ -20,11 +20,18 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+             
               "src/favicon.ico",
               "src/assets"
+              
+              
+             
             ],
             "styles": [
               "src/styles.css"
+              
+             
+              
             ],
             "scripts": []
           },
@@ -84,11 +91,16 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
+            
               "src/favicon.ico",
               "src/assets"
+              
+              
             ],
             "styles": [
               "src/styles.css"
+             
+              
             ],
             "scripts": []
           }
@@ -119,6 +131,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MapsLogistica"
+    }
+  },
+  "defaultProject": "MapsLogistica",
+  "cli": {
+    "analytics": "e0bf0f8d-1230-495d-95b7-254347fe6ffc"
+  }
 }
