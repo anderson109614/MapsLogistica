@@ -2,6 +2,7 @@ import { Component, Inject, Injectable } from '@angular/core';
 import { Usuario } from './Modelos/Usuario';
 import { SESSION_STORAGE, StorageService } from 'ngx-webstorage-service';
 import { Router } from '@angular/router';
+import {APISerService} from './servicios/api-ser.service';
 import 'leaflet';
 import 'leaflet-routing-machine';
 @Component({
@@ -14,7 +15,8 @@ export class AppComponent {
 
   log: boolean = false;
   constructor(@Inject(SESSION_STORAGE) private storage: StorageService,
-    public router: Router) { }
+    public router: Router,
+    private serApi:APISerService) { }
 
   ngOnInit() {
     let lg: Usuario = this.storage.get('Usuario');
@@ -45,14 +47,14 @@ export class AppComponent {
 
     var usr = (<HTMLInputElement>document.getElementById("txt-login-username")).value;
     var cont = (<HTMLInputElement>document.getElementById("txt-login-password")).value;
-    /*
-     this.loginService.postLogin(usr,cont).subscribe(
+ 
+     this.serApi.getAuth(usr,cont).subscribe(
        res => {
          try {
            if(res[0].id!=0){
              this.MostrarLogin(false);
              this.storage.set('Usuario',res[0]);
-             this.router.navigateByUrl('/pedidos');
+             this.router.navigateByUrl('/');
            } 
          }
          catch(e) {
@@ -66,7 +68,7 @@ export class AppComponent {
        },
        err => console.log(err)
      );
-     */
+       /* 
     let usrAux: Usuario = { Id: '1', Apellido: 'admin', Cedula: 'admin', Contrasena: 'admin', Nombre: 'admin' };
     if (usr == "admin" && cont == "admin") {
       this.MostrarLogin(false);
@@ -76,7 +78,7 @@ export class AppComponent {
       (<HTMLLabelElement>document.getElementById('lbl_error')).style.display = 'block';
       (<HTMLLabelElement>document.getElementById('lbl_error')).textContent = "Error.... Ingrese un usuario y contraseña validos!!";
     }
-
+*/
 
   }
 }

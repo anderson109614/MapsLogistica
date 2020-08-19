@@ -6,7 +6,9 @@ import {MonitoreoComponent} from './componentes/monitoreo/monitoreo.component';
 const routes: Routes = [
   {path:'dispositivos',component:DispositivosComponent},
   {path:'ruta/:id',component:RutaComponent},
-  {path:'monitoreo',component:MonitoreoComponent}
+  {path:'monitoreo',component:MonitoreoComponent},
+  {path:'**',component:DispositivosComponent},
+  {path:'',component:DispositivosComponent}
 ];
 
 @NgModule({

@@ -23,6 +23,7 @@
     "leaflet": "^1.6.0",
     "leaflet-gesture-handling": "^1.1.8",
     "leaflet-routing-machine": "^3.2.12",
+    "md5-typescript": "^1.0.5",
     "ngx-webstorage-service": "^4.1.0",
     "rxjs": "~6.5.4",
     "socket.io-client": "^2.3.0",
